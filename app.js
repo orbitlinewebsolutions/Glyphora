@@ -113,8 +113,8 @@
       logger: info => {
         if (info.status === "recognizing text") onProgress(info.progress || 0);
       },
-      workerPath: "https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.0.5/worker.min.js",
-      corePath: "https://cdnjs.cloudflare.com/ajax/libs/tesseract.js-core/5.0.0/tesseract-core.wasm.js",
+      workerPath: "https://cdn.jsdelivr.net/npm/tesseract.js@5.0.5/dist/worker.min.js",
+      corePath: "https://cdn.jsdelivr.net/npm/tesseract.js-core@5.0.0",
       langPath: "https://tessdata.projectnaptha.com/4.0.0"
     });
     return currentWorker;
