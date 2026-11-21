@@ -14,7 +14,7 @@ A privacy-minded, browser-based document text extraction app built with plain HT
 
 ## Deploy to Vercel
 
-1. Upload the contents of this folder to a GitHub repository (the `index.html` file must be at the repository root).
+1. Upload all files in this folder to the root of a GitHub repository. Keep `index.html`, `about.html`, `privacy.html`, `style.css`, `responsive.css`, and `app.js` together in the repository root.
 2. In Vercel, import the GitHub repository.
 3. Select **Other** as the framework preset if prompted.
 4. Leave Build Command empty.
@@ -31,7 +31,7 @@ Use any static file server from this directory, for example:
 npx serve .
 ```
 
-Opening `index.html` directly with `file://` may prevent some browser workers and PDF functionality from working correctly. Use localhost or HTTPS.
+Opening `index.html` directly with `file://` may prevent some browser workers and PDF functionality from working correctly. Use localhost or HTTPS. All app HTML, CSS and JavaScript files are in the project root; there are no local `css/` or `js/` subfolders.
 
 ## Privacy and external assets
 
