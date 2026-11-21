@@ -1,0 +1,39 @@
+@media (max-width: 700px) {
+  .site-header { height: 68px; padding: 0 18px; }
+  .brand { font-size: 19px; }
+  .header-nav { display: none; }
+  .header-cta { font-size: 10px; padding: 9px 11px; }
+  .hero { padding: 72px 20px 58px; }
+  .hero h1 { font-size: clamp(46px, 13vw, 65px); }
+  .hero-copy { font-size: 13px; max-width: 420px; }
+  .workspace-section, .results-section { padding: 0 15px; }
+  .workspace-heading h2, .results-heading h2 { font-size: 27px; }
+  .workspace-heading { align-items: start; }
+  .local-pill { font-size: 9px; padding-top: 10px; }
+  .workspace-card { padding: 11px; }
+  .upload-panel { min-height: 225px; }
+  .controls-row { align-items: stretch; flex-direction: column; }
+  .control-label select { width: 100%; }
+  .primary-button { width: 100%; }
+  .results-heading { align-items: start; flex-direction: column; gap: 14px; }
+  .result-actions { width: 100%; }
+  .result-actions button { flex: 1; }
+  .how-section { margin-top: 78px; padding: 0 21px; }
+  .how-intro h2 { font-size: 37px; }
+  .steps { grid-template-columns: 1fr; }
+  .step, .step + .step { border-left: 0; border-bottom: 1px solid var(--line); padding: 20px 0; }
+  .step:last-child { border-bottom: 0; }
+  .step h3 { margin-top: 8px; }
+  .closing { margin: 70px 15px 55px; padding: 30px 23px; display: block; }
+  .closing h2 { font-size: 32px; }
+  .closing-link { display: inline-block; margin-top: 24px; }
+  .site-footer { padding: 22px 18px; flex-wrap: wrap; gap: 15px; }
+  .site-footer > span { order: 3; width: 100%; }
+}
+@media (max-width: 380px) {
+  .header-cta { padding: 8px; }
+  .hero { padding-top: 58px; }
+  .eyebrow { font-size: 8px; }
+  .file-types { gap: 4px; }
+  .file-types span { padding: 4px 5px; }
+}

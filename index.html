@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f0">
+  <meta name="description" content="Glyphora is a private, browser-based document text extractor. Your documents stay on your device.">
+  <title>Glyphora — Make every document readable</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Glyphora home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7 5.5h12l6 6V26H7z"/><path d="M19 5.5v6h6M11 16h10M11 20h7"/></svg></span>
+      <span>glyphora</span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <a class="header-cta" href="#workspace">Start extracting <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> PRIVATE DOCUMENT TEXT EXTRACTION</div>
+      <h1>Make every document<br><em>readable.</em></h1>
+      <p class="hero-copy">Turn scans, PDFs and images into editable text. No account, no uploads, no clutter — just your document and your browser.</p>
+      <div class="privacy-note"><span class="lock-icon">⌑</span> Your files stay on this device</div>
+    </section>
+
+    <section class="workspace-section" id="workspace">
+      <div class="workspace-heading">
+        <div><span class="section-kicker">THE WORKSPACE</span><h2>Start with a document</h2></div>
+        <span class="local-pill"><span></span> Local processing</span>
+      </div>
+
+      <div class="workspace-card">
+        <div class="upload-panel" id="drop-zone" tabindex="0" role="button" aria-label="Choose or drop documents">
+          <input id="file-input" type="file" accept=".png,.jpg,.jpeg,.webp,.bmp,.pdf,.docx,.txt,image/*,application/pdf" multiple hidden>
+          <div class="upload-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 31V8m0 0-8 8m8-8 8 8"/><path d="M10 28v10a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V28"/></svg></div>
+          <h3>Drop your files here</h3>
+          <p>or <button class="text-button" id="browse-button" type="button">browse files</button> from your device</p>
+          <div class="file-types"><span>PDF</span><span>PNG</span><span>JPG</span><span>WEBP</span><span>DOCX</span><span>TXT</span></div>
+          <small>Multiple files supported · Recommended max 20 MB per file</small>
+        </div>
+
+        <div class="controls-row">
+          <label class="control-label" for="language-select">Recognition language
+            <select id="language-select">
+              <option value="eng">English</option>
+              <option value="hin">Hindi</option>
+              <option value="tel">Telugu</option>
+              <option value="eng+hin">English + Hindi</option>
+              <option value="eng+tel">English + Telugu</option>
+              <option value="eng+hin+tel">English + Hindi + Telugu</option>
+            </select>
+          </label>
+          <button class="primary-button" id="extract-button" type="button" disabled>Extract text <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="queue" id="queue" hidden>
+          <div class="queue-top"><strong>Selected documents</strong><button class="quiet-button" id="clear-files" type="button">Clear all</button></div>
+          <div id="file-list" class="file-list"></div>
+        </div>
+      </div>
+      <p class="workspace-footnote">Your selected documents are processed in this browser tab. They are not sent to Glyphora servers.</p>
+    </section>
+
+    <section class="results-section" id="results" hidden>
+      <div class="results-heading">
+        <div><span class="section-kicker">YOUR RESULTS</span><h2>Extracted text</h2></div>
+        <div class="result-actions">
+          <button class="secondary-button" id="copy-button" type="button">Copy text</button>
+          <button class="primary-button compact" id="download-button" type="button">Download .txt ↓</button>
+        </div>
+      </div>
+      <div class="progress-wrap" id="progress-wrap" hidden>
+        <div class="progress-label"><span id="progress-message">Preparing document…</span><span id="progress-percent">0%</span></div>
+        <div class="progress-track"><div id="progress-bar"></div></div>
+      </div>
+      <div class="result-card">
+        <div class="result-meta"><span id="result-filename">Document text</span><span id="result-status">Ready to edit</span></div>
+        <textarea id="output-text" spellcheck="false" placeholder="Your extracted text will appear here. You can edit it before downloading."></textarea>
+      </div>
+      <p class="result-disclaimer">OCR can misread low-quality scans, handwriting, tables and unusual fonts. Please review important information before relying on it.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="how-intro"><span class="section-kicker">SIMPLE BY DESIGN</span><h2>From page to text<br><em>in three steps.</em></h2></div>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><h3>Choose a file</h3><p>Select a scan, image, PDF or Word document from your device.</p></article>
+        <article class="step"><span class="step-number">02</span><h3>Let your browser read</h3><p>Text recognition runs on your device with open-source tools.</p></article>
+        <article class="step"><span class="step-number">03</span><h3>Use your text</h3><p>Review, edit, copy or download the extracted text.</p></article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div><span class="section-kicker">A QUIETER WAY TO WORK</span><h2>Your documents.<br><em>Your device. Your control.</em></h2></div>
+      <a href="#workspace" class="closing-link">Bring in a document <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="./"><span class="brand-mark"><svg viewBox="0 0 32 32"><path d="M7 5.5h12l6 6V26H7z"/><path d="M19 5.5v6h6M11 16h10M11 20h7"/></svg></span><span>glyphora</span></a>
+    <span>Open-source document text extraction.</span>
+    <div><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Libraries are downloaded by the browser. Document contents remain local. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.0.5/tesseract.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
